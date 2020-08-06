@@ -1,0 +1,35 @@
+﻿@using MyLibrary;
+@model List<MyLibrary.People>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <table class="table table-bordered table-hover table-striped">
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Age</th>
+            </tr>
+            @foreach (People p in Model)
+            {
+                <tr>
+                    <td>@p.FirstName</td>
+                    <td>@p.LastName</td>
+                    <td>@p.Age</td>
+                </tr>
+            }
+        </table>
+        <button id="my-btn">Add</button>
+        <form method="post" action="/Home/Add" id="my-form">
+            <button class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+    @section Scripts {
+        <script src="~/js/MyJs.js"></script>
+    }
+</body>
+</html>
+
